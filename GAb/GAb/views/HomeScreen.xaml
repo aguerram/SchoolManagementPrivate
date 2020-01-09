@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GAb.views.HomeScreen"
+
+             BackgroundColor="#7698f3">
+     <ContentPage.Resources>
+          <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="TextColor" Value="black" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+              <Style TargetType="Label">
+                  <Setter Property="TextColor" Value="#445E93"/>
+                  <Setter Property="FontSize" Value="20"/>
+                  <Setter Property="FontAttributes" Value="bold"/>
+              </Style>
+            <Style x:Key="logout" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BorderColor" Value="#445E93" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="WidthRequest" Value="300" />
+                <Setter Property="HeightRequest" Value="100" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="Logout" Text="logout" />
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <Grid  Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="user.png"/>
+            <StackLayout Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,20,0,0" HorizontalOptions="CenterAndExpand" HeightRequest="10" Spacing="10">
+                <Label Text="" x:Name="teacherName"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"   HorizontalOptions="Center" Orientation="Horizontal">
+                    <Button ImageSource="clipboard1.png" Clicked="NavigateToAbsenceScreen" Text="Absceasance" Style="{StaticResource buttonStyle}"/>
+                    <Button Clicked="NavigateToSearchScreen" ImageSource="loupe.png" Text="Search" Style="{StaticResource buttonStyle}"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalOptions="Center" Orientation="Horizontal">
+                <Button ImageSource="plus.png" Clicked="NavigateToAddStudentScreen" Text="Add student" Style="{StaticResource buttonStyle}"/>
+                <Button ImageSource="book.png" Clicked="NavigatToAddNewLesson" Text="New lesson" Style="{StaticResource buttonStyle}"/>
+            </StackLayout>
+            <!--<StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Button ImageSource="logout.png" Clicked="Logout" Text="Logout" Style="{StaticResource logout}"/>
+            </StackLayout>-->
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
+
+ <!--<StackLayout HeightRequest="150" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" >
+                <Image MinimumWidthRequest="1000" Source="user.png"/>
+     </StackLayout>
+            <StackLayout HorizontalOptions="Center" HeightRequest="10" Spacing="0">
+                <Label StyleClass="mainPageTitle" Text="" x:Name="teacherName"/>
+            </StackLayout>
+            <StackLayout Margin="0,50,0,0" Spacing="20" HorizontalOptions="Center" Orientation="Horizontal">
+                    <Button ImageSource="clipboard1.png" Clicked="NavigateToAbsenceScreen" Text="Absceasance" Style="{StaticResource buttonStyle}"/>
+                    <Button ImageSource="loupe.png" Text="Search" Style="{StaticResource buttonStyle}"/>
+            </StackLayout>
+            <StackLayout Spacing="20" HorizontalOptions="Center" Orientation="Horizontal">
+                <Button ImageSource="plus.png" Clicked="NavigateToAddStudentScreen" Text="Add student" Style="{StaticResource buttonStyle}"/>
+                <Button ImageSource="book.png" Clicked="NavigatToAddNewLesson" Text="New lesson" Style="{StaticResource buttonStyle}"/>
+            </StackLayout>-->
+           
